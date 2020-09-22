@@ -8,7 +8,7 @@
 </head>
 <body>
   <div class="container">
-    <header>
+    <header id="toggleMenu">
       <a class="logo" href="#">Good<span>Foods</span></a>
       <ul>
         <li><a href="#" class="active">Home</a></li>
@@ -16,10 +16,11 @@
         <li><a href="#">About</a></li>
         <li><a href="#">Contact</a></li>
       </ul>
+      <span class="menuIcon"></span>
     </header>
     <div class="content">
-      <div class="bannerText">
-        <div>
+      <div class="bannerText" id="slideshowText">
+        <div class="active">
           <h2>
             EAT Healthy<br>
             Stay Healthy
@@ -27,9 +28,27 @@
           <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt fugiat obcaecati minus mollitia dolores! Eos modi nulla voluptas inventore rerum?</p>
           <a href="#">Read More</a>
         </div>
+        <div>
+          <h2>
+            EAT Your<br>
+            Veggies
+          </h2>
+          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt fugiat obcaecati minus mollitia dolores! Eos modi nulla voluptas inventore rerum?</p>
+          <a href="#">Read More</a>
+        </div>
+        <div>
+          <h2>
+            Good Food<br>
+            Good Mood
+          </h2>
+          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt fugiat obcaecati minus mollitia dolores! Eos modi nulla voluptas inventore rerum?</p>
+          <a href="#">Read More</a>
+        </div>
       </div>
-      <div class="bannerImg">
-        <img src="./image/img4.jpg" alt="salad.jpg">
+      <div class="bannerImg" id="slideshow">
+        <img class="active" src="./image/img4.jpg" alt="salad.jpg">
+        <img src="./image/img1.jpg" alt="salad.jpg">
+        <img src="./image/img3.jpg" alt="salad.jpg">
       </div>
     </div>
     <div class="icons">
@@ -39,8 +58,8 @@
         <li><a href="#"><img src="./image/twitter.png" alt=""></a></li>
       </ul>
       <ul class="controls">
-        <li><a><img src="./image/left-arrow.png" alt=""></a></li>
-        <li><a><img src="./image/right-arrow.png" alt=""></a></li>
+        <li class="left"><a><img src="./image/left-arrow.png" alt=""></a></li>
+        <li class="right"><a><img src="./image/right-arrow.png" alt=""></a></li>
       </ul>
     </div>
   </div>

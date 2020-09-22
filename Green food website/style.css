@@ -93,6 +93,12 @@ header ul li a:active:before {
   max-width: 500px;
   margin-right: 50px;
 }
+.content .bannerText div {
+  display: none;
+}
+.content .bannerText .active {
+  display: initial;
+}
 .content .bannerText h2 {
   font-size: 54px;
   text-transform: uppercase;
@@ -132,8 +138,8 @@ header ul li a:active:before {
 }
 .content .bannerImg {
   position: relative;
-  width: 440px;
-  height: 440px;
+  width: 650px;
+  height: 650px;
   background-color: #000;
 }
 .content .bannerImg img {
@@ -144,11 +150,16 @@ header ul li a:active:before {
   height: 100%;
   object-fit: cover;
   transition: .5s ease;
+  opacity: 0;
+}
+.content .bannerImg .active {
+  opacity: 1;
 }
 .icons {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  margin-top: 50px;
 }
 .icons .sci,
 .icons .controls {
@@ -167,4 +178,104 @@ header ul li a:active:before {
 }
 .icons .sci li:hover img {
   transform: translateY(-10px);
+}
+.icons .controls li {
+  list-style: none;
+  margin-left: 20px;
+  cursor: pointer;
+  filter: invert(1);
+  transition: .2s ease-in-out;
+}
+.icons .controls li:hover {
+  opacity: 0.5;
+} 
+.icons .controls li img {
+  width: 35px; 
+}
+.menuIcon{
+  display: none;
+}
+
+@media (max-width:992px) {
+  .container {
+    padding: 20px 50px;
+  }
+  .container:before {
+    display: none;
+  }
+  header {
+    padding: 0;
+  }
+  .icons .controls li {
+    filter: invert(0);
+  }
+  .content {
+    flex-direction: column-reverse;
+    margin: 0;
+  }
+  .content .bannerText h2 {
+    font-size: 30px;
+  }
+  .content .bannerImg {
+    width: 100%;
+    height: 40vh;
+    margin: 20px 0;
+  }
+  .content .bannerText{
+    max-width: 100%;
+  }
+  header ul {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    background: #fff;
+    z-index: 1000;
+    padding: 100px 0;
+  }
+  header.active ul{
+    display: initial;
+  }
+  header.active .menuIcon{
+    background: url(./image/cancel.png);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 30px;
+  }
+  header ul li {
+    padding: 20px;
+    text-align: center;
+  }
+  header ul li a {
+    color: #333 !important;
+    font-size: 36px;
+    font-weight: 600;
+  }
+  .menuIcon{
+    width: 34px;
+    height: 34px;
+    background:url(./image/menu2.png); 
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 30px;
+    display: initial;
+    position: fixed;
+    z-index: 10000;
+    right: 50px;
+    cursor: pointer;
+  }
+}
+
+@media (max-width:767px) {
+  .container {
+    padding: 20px 30px;
+  }
+  .menuIcon{
+    right: 30px;
+  }
+  .icons .controls li img {
+    width: 30px; 
+  }
 }
