@@ -1,0 +1,19 @@
+.intro .intro-content{
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+.intro .intro-title {
+  text-align: center;
+}
+.intro-text {
+  width: 30%;
+  opacity: 0;
+  transform: translateY(20px);
+  transition: 1s all ease-in-out;
+}
+
+.intro-appear {
+  opacity: 1;
+  transform: translateY(0px);
+}
