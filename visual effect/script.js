@@ -8,4 +8,5 @@ function scrollAppear() {
   }
 }
 
-window.addEventListener('scroll', scrollAppear)
+window.addEventListener("scroll", scrollAppear);
+
