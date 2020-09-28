@@ -1,0 +1,45 @@
+body {
+  font-family: sans-serif;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+.intro {
+  display: flex;
+  color: white;
+  height: 100vh;
+  background-image: linear-gradient(rgba(0, 0, 0, 0.664),rgba(0, 0, 0, 0.651)),url(./standing.jpg);
+  background-size: cover;
+}
+.intro .typing {
+  margin-left: 5px;
+  position: relative;
+}
+.intro .typing::after {
+  position: absolute;
+  content: "";
+  top: 8px;
+  right: -6px;
+  width: 1px;
+  height: 3.5%;
+  border-right: 3px solid white;
+  animation: blink 1s infinite ;
+}
+
+@keyframes blink {
+  0% {
+    opacity: 0;
+  }
+  5% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 1;
+  }
+  55% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 0;
+  }
+}
