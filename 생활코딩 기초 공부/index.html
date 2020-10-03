@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <title>Document</title>
+  </head>
+  <body>
+    <input type="button" value="day" />
+
+    <a href="#">la</a>
+    <a href="#">lala</a>
+    <a href="#">lalala</a>
+
+    <script>
+      let button = document.querySelector("input");
+      // let atag = document.querySelectorAll("a");
+      let all = {
+        colorset: function (choice) {
+          // for (let i = 0; i < atag.length; i++) {
+          //   atag[i].style.color = choice;
+          //   }
+          $("a").css("color", choice);
+        },
+        bodysetcolor: function (choice) {
+          // document.body.style.backgroundColor = choice;
+          $("body").css("backgroundColor", choice);
+        },
+      };
+
+      button.addEventListener("click", function () {
+        if (button.value === "day") {
+          all.bodysetcolor("black");
+          button.value = "night";
+          all.colorset("powderblue");
+        } else {
+          all.bodysetcolor("white");
+          button.value = "day";
+          all.colorset("blue");
+        }
+      });
+    </script>
+  </body>
+</html>
