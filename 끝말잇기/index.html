@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <span class="start">이경준</span><br />
+    <input type="text" /><button>클릭</button><br />
+    <span class="alarm">딩동댕</span>
+
+    <script>
+      let start = document.querySelector(".start");
+      let answer = document.querySelector("input");
+      let button = document.querySelector("button");
+      let alarm = document.querySelector(".alarm");
+
+      button.addEventListener("click", function () {
+        if (
+          start.textContent[start.textContent.length - 1] === answer.value[0]
+        ) {
+          start.textContent = answer.value;
+          answer.value = "";
+          alarm.textContent = "딩동댕!";
+        } else {
+          alarm.textContent = "땡!";
+        }
+      });
+    </script>
+
+  </body>
+</html>
