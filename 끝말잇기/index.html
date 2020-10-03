@@ -7,27 +7,31 @@
   </head>
   <body>
     <span class="start">이경준</span><br />
-    <input type="text" /><button>클릭</button><br />
-    <span class="alarm">딩동댕</span>
+    <form><input type="text" /><button>클릭</button><br /></form>
+    <span class="alarm"></span>
 
     <script>
       let start = document.querySelector(".start");
       let answer = document.querySelector("input");
       let button = document.querySelector("button");
       let alarm = document.querySelector(".alarm");
+      let form = document.querySelector("form");
 
-      button.addEventListener("click", function () {
+      form.addEventListener("submit", function (event) {
+        event.preventDefault();
         if (
           start.textContent[start.textContent.length - 1] === answer.value[0]
         ) {
           start.textContent = answer.value;
           answer.value = "";
           alarm.textContent = "딩동댕!";
+          answer.focus();
         } else {
+          answer.value = "";
           alarm.textContent = "땡!";
+          answer.focus();
         }
       });
     </script>
-
   </body>
 </html>
