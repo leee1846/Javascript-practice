@@ -111,6 +111,15 @@
 // box.addEventListener("mouseleave", runEvent);
 // box.addEventListener("mouseover", runEvent);
 
+
+
+
+
+
+
+
+
+
 let form = document.querySelector("#addForm");
 let itemList = document.querySelector("#items");
 let filter = document.querySelector('#filter');
@@ -119,6 +128,7 @@ form.addEventListener("submit", (e) => {
   e.preventDefault();
 
   let newItem = document.querySelector("#item").value;
+  let goBack = document.querySelector("#item");
 
   let li = document.createElement("li");
   li.className = "list-group-item";
@@ -128,6 +138,8 @@ form.addEventListener("submit", (e) => {
   let deleteBtn = document.createElement('div');
   deleteBtn.className = 'delete';
   li.appendChild(deleteBtn);
+
+  goBack.focus();
 });
 
 itemList.addEventListener('click',(e)=>{
@@ -152,3 +164,5 @@ filter.addEventListener('keyup',(e)=>{
     }
   })
 })
+
+
