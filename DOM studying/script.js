@@ -83,27 +83,72 @@
 //   console.log(e.offsetY,e.offsetX)
 // });
 
-let button = document.querySelector("#main button");
-let box = document.querySelector(".box");
+// let button = document.querySelector("#main button");
+// let box = document.querySelector(".box");
 
 // button.addEventListener("click",runEvent)
 // button.addEventListener("dblclick",runEvent)
 // button.addEventListener("mousedown",runEvent)
 
-let itemInput = document.querySelector('input[type="text"]');
-let form = document.querySelector('form');
+// let itemInput = document.querySelector('input[type="text"]');
+// let form = document.querySelector('form');
 
-itemInput.addEventListener("keydown", runEvent);
-function runEvent(e) {
-  console.log(`EVENT TYPE: + ${e.type}`);
+// itemInput.addEventListener("focus", runEvent);
+// itemInput.addEventListener("blur", runEvent);
+// itemInput.addEventListener("input", runEvent);
+// itemInput.addEventListener("submit", runEvent);
+// function runEvent(e) {
+//   e.preventDefault();
+//   console.log(`EVENT TYPE: + ${e.type}`);
+// console.log(e.target.value)
 
-  // box.innerHTML = `<h3>MouseX: ${e.offsetX} </h3><h3>MouseY: ${e.offsetY}</h3>`;
+// box.innerHTML = `<h3>MouseX: ${e.offsetX} </h3><h3>MouseY: ${e.offsetY}</h3>`;
 
-  // document.body.style.backgroundColor = `rgb(${e.offsetX},${e.offsetY},90)`;
-
-  
-}
+// document.body.style.backgroundColor = `rgb(${e.offsetX},${e.offsetY},90)`;
+// document.querySelector('.output').innerHTML = `<h1>${e.target.value}</h1>`
 
 // box.addEventListener("mouseenter", runEvent);
 // box.addEventListener("mouseleave", runEvent);
 // box.addEventListener("mouseover", runEvent);
+
+let form = document.querySelector("#addForm");
+let itemList = document.querySelector("#items");
+let filter = document.querySelector('#filter');
+
+form.addEventListener("submit", (e) => {
+  e.preventDefault();
+
+  let newItem = document.querySelector("#item").value;
+
+  let li = document.createElement("li");
+  li.className = "list-group-item";
+  li.appendChild(document.createTextNode(newItem));
+  itemList.appendChild(li);
+
+  let deleteBtn = document.createElement('div');
+  deleteBtn.className = 'delete';
+  li.appendChild(deleteBtn);
+});
+
+itemList.addEventListener('click',(e)=>{
+  if (e.target.classList.contains('delete')) {
+    if(confirm('Are You Sure?')) {
+      let li = e.target.parentNode;
+      itemList.removeChild(li);
+    }
+  }
+})
+
+filter.addEventListener('keyup',(e)=>{
+  let text = e.target.value.toLowerCase();
+  let items = itemList.querySelectorAll('li');
+  
+  Array.from(items).forEach(function(item){
+    let itemName = item.lastChild.textContent;
+    if (itemName.toLowerCase().indexOf(text) != -1){
+      item.style.display = 'block';
+    }else {
+      item.style.display = 'none';
+    }
+  })
+})

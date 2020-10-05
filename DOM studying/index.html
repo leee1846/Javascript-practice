@@ -9,25 +9,28 @@
 <body>
   <header id="main-header">
     <div class="container">
-      <h1 id="header-title">Item Listener</h1>
+      <h1 id="header-title">Item Listr</h1>
+    </div>
+    <div class="container2">
+      <input type="text" placeholder="Search Items..." id="filter">
     </div>
   </header>
   <div class="container">
     <div id="main" class="card card-body">
       <h2 class="title">Add Item</h2>
-      <form class="form-inline">
-        <input type="text" class="form-control">
+      <form id="addForm" class="form-inline">
+        <input type="text" class="form-control" id="item">
         <input type="submit" class="btn btn-dark" value="submit">
       </form>
       <h2 class="title">Items</h2>
-      <ul id="items" class="list-group">
-        <li class="list-group-item">Item 1</li>
-        <li class="list-group-item">Item 2</li>
-        <li class="list-group-item">Item 3</li>
-        <li class="list-group-item">Item 4</li>
+      <ul id="items" class="list-group output">
+        <li class="list-group-item">Item 1 <div class="delete"></div></li>
+        <li class="list-group-item">Item 2 <div class="delete"></div></li>
+        <li class="list-group-item">Item 3 <div class="delete"></div></li>
+        <li class="list-group-item">Item 4 <div class="delete"></div></li>
       </ul>
-      <button class="btn">Click Here</button>
-      <div class="box" style="width: 400px;height:200px;background:rgb(141, 141, 141);"><span>he</span></div>
+      <!-- <button class="btn">Click Here</button> -->
+      <!-- <div class="box" style="width: 400px;height:200px;background:rgb(141, 141, 141);"><span>he</span></div> -->
     </div>
   </div>
 
