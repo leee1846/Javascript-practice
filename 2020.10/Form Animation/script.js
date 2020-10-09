@@ -24,10 +24,10 @@ function animatedForm () {
     })
   })
 }
+
 //에러 구분 함수
 function validateUser(user) {
   if(user.value.length < 6) {
-    console.log('not enough characters');
     error('rgb(189,87,87)');
   } else {
     error('rgb(87,189,130)');
@@ -51,8 +51,8 @@ function nextSlide(parent,nextForm) {
   nextForm.classList.add('active');
 }
 //배경색 전환 함수
-function error(color) {
-  document.body.style.backgroundColor = color;
+function error(choice) {
+  document.body.style.backgroundColor = choice;
 }
 
 animatedForm();

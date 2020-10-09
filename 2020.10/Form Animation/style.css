@@ -33,6 +33,7 @@ body {
 .field-finish i {
   padding: 10px;
   cursor: pointer;
+  color: darkseagreen;
 }
 
 input {
