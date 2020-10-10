@@ -15,6 +15,7 @@ function login() {
         nextSlide(parent,nextForm);
       }else {
         parent.style.animation = 'shake .3s ease';
+
       }
 
       parent.addEventListener('animationend',()=>{
@@ -27,6 +28,7 @@ function login() {
     //icon color change
   function errorColor() {
     document.querySelectorAll('i').forEach(function(e){
+      e.classList.remove('correct');
       e.classList.add('incorrect');
     })
   }
@@ -67,6 +69,7 @@ function login() {
     parent.classList.remove('active');
     parent.classList.add('innactive');
     nextForm.classList.add('active');
+    nextForm.classList.remove('innactive');
   }
 
 }
