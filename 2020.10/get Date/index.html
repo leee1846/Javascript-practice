@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <section></section>
+  <script>
+    setInterval(function () {
+        let date = new Date();
+        let year = date.getFullYear();
+        let month = date.getMonth() + 1;
+        let day = date.getDate();
+        let hour = date.getHours();
+        let minutes = date.getMinutes();
+        let second = date.getSeconds();
+
+        let ampm = "";
+        if (hour > 12) {
+          hour = hour - 12;
+          ampm = "PM";
+        } else if (hour === 12) {
+          ampm = "PM noon";
+        } else if (hour === 0) {
+          ampm = "AM MIDNIGHT";
+        } else {
+          ampm = "AM";
+        }
+
+        if (hour < 10) {
+          hour = "0" + hour;
+        } else if (minutes < 10) {
+          minutes = "0" + minutes;
+        } else if (second < 10) {
+          second = "0" + second;
+        }
+
+        document.querySelector("section").innerHTML =
+          year +
+          "년" +
+          month +
+          "월" +
+          day +
+          "일" +
+          hour +
+          "시" +
+          minutes +
+          "분" +
+          second +
+          "초" +
+          ampm;
+      }, 100);
+  </script>
+</body>
+</html>
