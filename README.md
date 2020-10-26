@@ -1,0 +1,3 @@
+# Javascript-practice-2020
+javascript를 이용한 토이프로젝트 모음
+꾸준히 업데이트중...
